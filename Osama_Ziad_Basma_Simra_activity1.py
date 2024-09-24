@@ -173,20 +173,20 @@ def cake_top(p, q):
 # Function to draw candle
 def draw_candle():
     turtle.penup()
-    turtle.pensize(3)
-    turtle.goto(-15, 20)  
-    turtle.pendown()
-    turtle.setheading(90)
-    turtle.fillcolor("red")
+    turtle.pensize(3)                    #Adjusting the size of the pen
+    turtle.goto(-15, 20)                 #The turtle move to the correct position
+    turtle.pendown()                     #Pen is down to start drawing
+    turtle.setheading(90)                
+    turtle.fillcolor("red")              #Selecting the color of the bottom part of the candle
     turtle.begin_fill()
     turtle.color("red")
-    turtle.forward(20)  
+    turtle.forward(20)                   #starts to draw
     turtle.end_fill()
 
-    turtle.fillcolor("yellow")  
+    turtle.fillcolor("yellow")           #Selecting the color of the top part of the candle
     turtle.begin_fill()
     turtle.color("yellow")
-    turtle.circle(3)  
+    turtle.circle(3)                     #drawing the circle on top of the bottom part of the candle with radius of 3
     turtle.end_fill()
     
 
@@ -194,13 +194,13 @@ def draw_candle():
 def draw_star(size):
     turtle.begin_fill()
     turtle.forward(size)
-    turtle.right(144)
+    turtle.right(144)                    #angle of the stars
     turtle.forward(size)
     turtle.right(144)
     turtle.forward(size)
     turtle.right(144)
     turtle.forward(size)
-    turtle.right(144)
+    turtle.right(144)                     #repeating for 5 times to create a star
     turtle.forward(size)
     turtle.right(144)
     turtle.end_fill()
@@ -208,14 +208,14 @@ def draw_star(size):
 
 # Add stars to each layer of the cake
 def add_stars_to_layers():
-    star_size = 8
+    star_size = 8                        #the size of the stars
 
-    # Add stars to the bottom layer (lower and closer)
+    # Add stars to the bottom layer 
     turtle.penup()
-    turtle.pensize(1)
-    turtle.goto(-70, -55)  # Lower and closer position on bottom layer
-    turtle.pendown()
-    turtle.fillcolor("gold")
+    turtle.pensize(1)                    #size of the lines
+    turtle.goto(-70, -55)  # High on bottom layer
+    turtle.pendown()            
+    turtle.fillcolor("gold")      #color of the stars
     draw_star(star_size)
 
     turtle.penup()
@@ -228,9 +228,9 @@ def add_stars_to_layers():
     turtle.pendown()
     draw_star(star_size)
 
-    # Add stars to the middle layer (lower and closer)
+    # Add stars to the middle layer 
     turtle.penup()
-    turtle.goto(-45, -25)  # Lower and closer position on middle layer
+    turtle.goto(-45, -25)  # Middle part of the middle layer
     turtle.pendown()
     draw_star(star_size)
 
@@ -239,9 +239,9 @@ def add_stars_to_layers():
     turtle.pendown()
     draw_star(star_size)
 
-    # Add stars to the top layer (lower and closer)
+    # Add stars to the top layer
     turtle.penup()
-    turtle.goto(-20, 5)  # Lower and closer position on top layer
+    turtle.goto(-20, 5)  #Middle part of the top layer
     turtle.pendown()
     draw_star(star_size)
     turtle.penup()
