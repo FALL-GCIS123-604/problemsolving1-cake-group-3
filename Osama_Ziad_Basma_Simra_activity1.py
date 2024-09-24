@@ -149,6 +149,7 @@ def cake_middle(x, y):
 
 #Code for top layer of the cake
 def cake_top(p, q):
+    turtle.up()
     turtle.forward(q-7)                 #Moving to where the layer starts 
     turtle.setheading(360)
     turtle.down()
