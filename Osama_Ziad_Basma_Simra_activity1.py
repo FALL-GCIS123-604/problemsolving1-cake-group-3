@@ -23,10 +23,10 @@ User inputs:
 
 The program checks the input ranges before drawing the table and cake. """
 
-#Importing turtle to use trutle commands
+"""Importing turtle to use trutle commands"""
 import turtle
 
-#Defining function to draw front legs of table
+"""Defining function to draw front legs of table"""
 def front_legs(leg_length):                      #leg_length is a variable that holds the 
     turtle.forward(leg_length)                   #dimensions of the table's legs.
     turtle.setheading(180)
@@ -35,7 +35,7 @@ def front_legs(leg_length):                      #leg_length is a variable that 
     turtle.forward(leg_length)
     
 
-#Defining function to draw the legs of the table on the right side
+"""Defining function to draw the legs of the table on the right side"""
 def right_legs(l,w,leg_length):                 #Parameters include length,width and length of the leg
     front_legs(leg_length)                      #Calling function to draw the front leg
     turtle.left(90)
@@ -54,7 +54,7 @@ def right_legs(l,w,leg_length):                 #Parameters include length,width
     turtle.left(180)
 
 
-#Defining function to draw the legs of the table on the left side
+"""Defining function to draw the legs of the table on the left side"""
 def left_legs(l,w,leg_length):                 #Parameters include length,width and length of the leg
     turtle.forward(l-30)                       #Turtle has moved to left side of the table, leaving 30
     turtle.setheading(270)                     # pixel space for the leg to be drawn
@@ -74,7 +74,7 @@ def left_legs(l,w,leg_length):                 #Parameters include length,width 
     turtle.penup()
     
 
-#Defining function to draw the surface/top of the table
+"""Defining function to draw the surface/top of the table"""
 def top_table(l,w,color):                    #Parameters include length,width and colour of the entire table
     turtle.penup()
     turtle.pencolor(color)                   #Specifying the colour of the pen (through user input)
@@ -99,11 +99,10 @@ def top_table(l,w,color):                    #Parameters include length,width an
     turtle.end_fill()
     turtle.home()                           #Returning turtle to original position    
 
-# Code for bottom layer of the cake
+"""Code for bottom layer of the cake"""
 def cake_bot(a, b):
-    turtle.penup()
-    turtle.forward(5)                       #To ensure the layer is centered
-    turtle.forward(a/2) 
+    turtle.penup()                      
+    turtle.forward(a/2)                     #To ensure the layer is centered
     turtle.setheading(90)   
     turtle.forward(b)                       #Moving to where the bottom layer starts
     turtle.down()  
@@ -124,7 +123,7 @@ def cake_bot(a, b):
     turtle.setheading(90)                  #Face up for the next layer
     
 
-# Code for middle layer of the cake
+"""Code for middle layer of the cake"""
 def cake_middle(x, y):
     turtle.up()
     turtle.forward(y) 
@@ -147,7 +146,7 @@ def cake_middle(x, y):
     turtle.setheading(90)
     
 
-#Code for top layer of the cake
+"""Code for top layer of the cake"""
 def cake_top(p, q):
     turtle.up()
     turtle.forward(q-7)                 #Moving to where the layer starts 
@@ -169,12 +168,11 @@ def cake_top(p, q):
     turtle.end_fill()
     turtle.setheading(360)
     
-
-# Function to draw candle
+"""Function to draw candle"""
 def draw_candle():
     turtle.penup()
     turtle.pensize(3)                    #Adjusting the size of the pen
-    turtle.goto(-15, 20)                 #The turtle move to the correct position
+    turtle.goto(-25, 20)                 #The turtle move to the correct position
     turtle.pendown()                     #Pen is down to start drawing
     turtle.setheading(90)                
     turtle.fillcolor("red")              #Selecting the color of the bottom part of the candle
@@ -190,7 +188,7 @@ def draw_candle():
     turtle.end_fill()
     
 
-# Function to draw stars
+"""Function to draw stars"""
 def draw_star(size):
     turtle.begin_fill()
     turtle.forward(size)
@@ -206,20 +204,20 @@ def draw_star(size):
     turtle.end_fill()
     
 
-# Add stars to each layer of the cake
+"""Add stars to each layer of the cake"""
 def add_stars_to_layers():
     star_size = 8                        #the size of the stars
 
-    # Add stars to the bottom layer 
+    """Add stars to the bottom layer""" 
     turtle.penup()
     turtle.pensize(1)                    #size of the lines
-    turtle.goto(-70, -55)  # High on bottom layer
+    turtle.goto(-75, -55)  # High on bottom layer
     turtle.pendown()            
     turtle.fillcolor("gold")      #color of the stars
     draw_star(star_size)
 
     turtle.penup()
-    turtle.goto(-20, -55)
+    turtle.goto(-25, -55)
     turtle.pendown()
     draw_star(star_size)
 
@@ -228,20 +226,20 @@ def add_stars_to_layers():
     turtle.pendown()
     draw_star(star_size)
 
-    # Add stars to the middle layer 
+    """Add stars to the middle layer"""
     turtle.penup()
-    turtle.goto(-45, -25)  # Middle part of the middle layer
+    turtle.goto(-55, -25)  # Middle part of the middle layer
     turtle.pendown()
     draw_star(star_size)
 
     turtle.penup()
-    turtle.goto(5, -25)
+    turtle.goto(0, -25)
     turtle.pendown()
     draw_star(star_size)
 
-    # Add stars to the top layer
+    """Add stars to the top layer"""
     turtle.penup()
-    turtle.goto(-20, 5)  #Middle part of the top layer
+    turtle.goto(-25, 5)  #Middle part of the top layer
     turtle.pendown()
     draw_star(star_size)
     turtle.penup()
@@ -268,19 +266,19 @@ def main():
     turtle.hideturtle()
     turtle.done()
 
-#Input for length, width and color of table
+"""Input for length, width and color of table"""
 l = int(input("Enter the length of the table (300 - 450): "))
 w = int(input("Enter the width of the table (100 - 150): "))
 leg_length = 0.4*l                                        
 color = input ("Enter the color of your table: ")
 
-# Input for length and width of cake
+"""Input for length and width of cake"""
 len_cake = int(input("Enter the length of the cake (60-70): "))
 wid_cake = int(input("Enter the width of the cake (30-40): "))
 
 
 
-#Placing restrictions on maximum and minimum length and width of table
+"""Placing restrictions on maximum and minimum length and width of table"""
 if ( l < 300 or l > 450) :
     print ("Error, Please input positive values between 300 and 450 only")
 if (w < 100 or w > 150): 
@@ -288,7 +286,7 @@ if (w < 100 or w > 150):
 else:
     top_table(l,w,color)                            #Call function for table
 
-#Placing restrictions on maximum and minimum length and width of cake
+"""Placing restrictions on maximum and minimum length and width of cake"""
 if (len_cake < 60 or len_cake > 70):
     print ("Error, please enter a value between 60 and 70")
 if (wid_cake < 30 or wid_cake > 40):
